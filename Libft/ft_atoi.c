@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 09:25:05 by mmorente          #+#    #+#             */
-/*   Updated: 2024/09/28 13:13:09 by mmorente         ###   ########.fr       */
+/*   Updated: 2024/10/12 14:45:27 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 int	ft_isspace(int c)
 {
-	if ((c >= '\t' && c <= '\r') || c == 32)
+	if ((c >= 9 && c <= 13) || c == 32)
 		return (1);
-	else
-		return (0);
+	return (0);
 }
 
 int	ft_atoi(const char *nptr)
@@ -33,15 +32,15 @@ int	ft_atoi(const char *nptr)
 		i++;
 	if (nptr[i] == '+' && nptr[i + 1] != '-')
 		i++;
-	else
+	if (nptr[i] == '-')
 	{
-		sign *= -1;
+		sign = -1;
 		i++;
 	}
-	while (nptr[i] && nptr[i] >= '0' && nptr[i] <= '9')
+	while (nptr[i] && nptr[i] >= 48 && nptr[i] <= 57)
 	{
 		result *= 10;
-		result += nptr[i] - '0';
+		result += nptr[i] - 48;
 		i++;
 	}
 	result *= sign;

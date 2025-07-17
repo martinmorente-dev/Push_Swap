@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 09:20:25 by mmorente          #+#    #+#             */
-/*   Updated: 2024/10/12 11:05:05 by mmorente         ###   ########.fr       */
+/*   Updated: 2024/10/12 19:08:08 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
-	size_t	size_new;
+	t_list	*new_obj;
 
-	size_new = ft_lstsize(lst);
-	new_list = malloc(size_new * sizeof(t_list));
-	if (!new_list)
+	if (!lst || !f || !del)
 		return (NULL);
+	new_list = NULL;
 	while (lst)
 	{
-		new_list = f(lst->next);
+		new_obj = ft_lstnew(f(lst->content));
+		if (!new_obj)
+		{
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_list, new_obj);
 		lst = lst->next;
-	}
-	if (!new_list)
-	{
-		ft_lstclear(&new_list, del);
-		free(new_list);
 	}
 	return (new_list);
 }

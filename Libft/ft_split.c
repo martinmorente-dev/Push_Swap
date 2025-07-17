@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 12:08:11 by mmorente          #+#    #+#             */
-/*   Updated: 2024/10/05 12:38:23 by mmorente         ###   ########.fr       */
+/*   Updated: 2024/10/12 11:54:27 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,6 @@ char	**ft_split(char const *s, int c)
 		i += len;
 		j++;
 	}
-	str[j] = '\0';
+	str[j] = NULL;
 	return (str);
 }

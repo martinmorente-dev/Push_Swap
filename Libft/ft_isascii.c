@@ -6,15 +6,15 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 10:40:47 by mmorente          #+#    #+#             */
-/*   Updated: 2024/10/10 18:41:11 by martin           ###   ########.fr       */
+/*   Updated: 2024/10/12 13:29:03 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_iascii(unsigned int ch)
+int	ft_isascii(int ch)
 {
-	if (ch > 0 && ch <= 127)
+	if (ch >= 0 && ch <= 127)
 		return (1);
 	return (0);
 }

@@ -6,13 +6,13 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 20:22:25 by mmorente          #+#    #+#             */
-/*   Updated: 2024/10/10 18:55:29 by martin           ###   ########.fr       */
+/*   Updated: 2024/10/12 13:17:12 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	int	i;
 
