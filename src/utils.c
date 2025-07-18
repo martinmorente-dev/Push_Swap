@@ -6,13 +6,13 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 10:51:21 by mmorente          #+#    #+#             */
-/*   Updated: 2025/07/17 10:52:36 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/07/18 13:42:58 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-int	nb_founded(char *src, char nb)
+int	nb_founded(int *src, int nb)
 {
 	int	i;
 
@@ -25,3 +25,4 @@ int	nb_founded(char *src, char nb)
 	}
 	return (0);
 }
+
