@@ -6,11 +6,11 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 14:07:01 by mmorente          #+#    #+#             */
-/*   Updated: 2025/07/18 13:57:48 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/07/22 12:47:00 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	character_found(char *src)
 {
@@ -52,26 +52,17 @@ int	overpass_int(char *src)
 int	double_nb_finded(char **src, int argc)
 {
 	int		*nbs;
-	int		i_nbs;
-	int		nb;
-	int		**buffer;
+	char	**buffer;
 
 	nbs = ft_calloc(255, sizeof(int *));
 	if (!nbs)
 		return (1);
-	i_nbs = 0;
-	nb = 0;
-	while (argc-- > 0)
+	while (argc > 0)
 	{
 		buffer = ft_split(src[argc], ' ');
-		nb = ft_atoi(src[argc]);
-		if (nb_founded(nbs, nb))
-		{
-			free(nbs);
+		if (check_parameter(buffer, nbs))
 			return (1);
-		}
-		else
-			nbs[i_nbs++] = nb;
+		argc--;
 	}
 	free(nbs);
 	return (0);
