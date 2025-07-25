@@ -6,11 +6,11 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 10:51:21 by mmorente          #+#    #+#             */
-/*   Updated: 2025/07/22 12:46:38 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/07/25 13:53:40 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 int	nb_founded(int *src, int nb)
 {

@@ -6,11 +6,11 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 14:07:01 by mmorente          #+#    #+#             */
-/*   Updated: 2025/07/22 12:47:00 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/07/25 13:53:50 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 int	character_found(char *src)
 {
