@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 13:35:52 by mmorente          #+#    #+#             */
-/*   Updated: 2025/07/25 14:11:35 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/07/29 11:57:37 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char *argv[])
 	if (argc < 2)
 		return (0);
 	i = 1;
-	if (!validations(argv, argc - 1))
+	if (!validations(argv, argc))
 	{
 		write(2, "Error\n", 6);
 	}
