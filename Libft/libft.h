@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 11:55:40 by mmorente          #+#    #+#             */
-/*   Updated: 2024/10/12 19:32:01 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/07/30 10:48:27 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int			ft_strncmp(const char *s1, const char *s2, size_t n);
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
 char		*ft_strnstr(const char *haystak, const char *needle, size_t len);
 int			ft_atoi(const char *nptr);
+int			ft_isspace(int c);
+long		ft_atol(const char *nptr);
 void		*ft_calloc(size_t	count, size_t size);
 char		*ft_strdup(const char *s);
 char		*ft_substr(char const *s, unsigned int start, size_t len);

@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 13:54:45 by mmorente          #+#    #+#             */
-/*   Updated: 2025/07/29 13:01:22 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/07/30 13:33:08 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,46 @@ t_stack_list	*new_node(int nbr, int index)
 
 void	push(t_stack_list **stack, t_stack_list *node)
 {
+	t_stack_list	*tmp;
+
 	if (!node)
-		return (NULL);
+		return ;
 
-	node->next = *stack;
-	node->prev = NULL;
+	tmp = 0;
+	node->next = NULL;
+	if (*stack == NULL)
+	{
+		node->prev = NULL;
+		*stack = node;
+	}
+	else
+	{
+		tmp = *stack;
+		while (tmp->next)
+			tmp = tmp->next;
+		tmp->next = node;
+		node->prev = tmp;
+	}
+}
 
-	if (*stack)
-		(*stack)->prev = node;
+void	innit_stack(t_stack_list **a, char **src)
+{
+	int		i;
+	int		j;
+	int		nb;
+	char	**buffer;
 
-	*stack = node;
+	i = 1;
+	while (src[i])
+	{
+		buffer = ft_split(src[i], ' ');
+		j = 0;
+		while (buffer[j])
+		{
+			nb = ft_atoi(buffer[j]);
+			push(a, new_node(nb, j));
+			j++;
+		}
+		i++;
+	}
 }
