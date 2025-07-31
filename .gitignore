@@ -1,0 +1,6 @@
+#Ignore the executable file
+a.out
+push_swap
+
+#Ignore all the object files
+*.o

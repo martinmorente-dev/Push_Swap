@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 13:54:45 by mmorente          #+#    #+#             */
-/*   Updated: 2025/07/30 13:33:08 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/07/31 13:48:39 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,14 @@ void	innit_stack(t_stack_list **a, char **src)
 		}
 		i++;
 	}
+}
+
+void	stack_delone(t_stack_list *node, void (*del)(void *))
+{
+	del((void *) node);
+}
+
+void	del(void *stack)
+{
+	free (stack);
 }

@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
+/*   algorithm_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 09:02:15 by mmorente          #+#    #+#             */
-/*   Updated: 2025/07/31 13:38:44 by mmorente         ###   ########.fr       */
+/*   Created: 2025/07/31 11:02:15 by mmorente          #+#    #+#             */
+/*   Updated: 2025/07/31 11:05:38 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../push_swap.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+int	check_order(t_stack_list *a)
 {
-	del(lst->content);
-	free(lst);
+	int	compare;
+
+	compare = a->nbr;
+	while (a)
+	{
+		if (compare > a->nbr)
+			return (0);
+		a = a->next;
+	}
+	return (1);
 }

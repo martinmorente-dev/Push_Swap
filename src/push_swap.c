@@ -6,18 +6,28 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 13:35:52 by mmorente          #+#    #+#             */
-/*   Updated: 2025/07/30 14:20:05 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/07/31 14:00:55 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 #include <stdio.h>
 
+
+void	print_stack(t_stack_list *a)
+{
+	while (a)
+	{
+		printf("Number: %d with index: %d\n", a->nbr, a->index);
+		a = a->next;
+	}
+}
+
 int	main(int argc, char *argv[])
 {
 	t_stack_list	*a;
 	t_stack_list	*b;
-	t_stack_list	*tmp;
+	int				l_stack;
 
 	if (argc < 2)
 		return (0);
@@ -29,12 +39,23 @@ int	main(int argc, char *argv[])
 	a = NULL;
 	b = NULL;
 	innit_stack(&a, argv);
-	tmp = a;
-	while (tmp)
+	l_stack = leng_stack(a);
+	if (check_order(a))
+		return (0);
+	if (l_stack <= 3)
 	{
-		printf("This is the position %d of the stack and its number is %d\n", tmp->index, tmp->nbr);
-		tmp = tmp->next;
+		printf("Before \n:");
+		print_stack(a);
+		printf("After: \n");
+		pb(&a, &b);
+		printf("Stakc B\n");
+		print_stack(b);
+		printf("Stakc A\n");
+		print_stack(a);
 	}
+	else
+		return (1);
 	return (0);
 }
+
 
