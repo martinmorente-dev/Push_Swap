@@ -6,12 +6,12 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 13:35:44 by mmorente          #+#    #+#             */
-/*   Updated: 2025/07/31 14:00:45 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/04 13:41:10 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H	push(&b, new_node(tmp, tmp_index));
+# define PUSH_SWAP_H
 
 # include "../Libft/libft.h"
 # include <stdio.h>
@@ -40,12 +40,13 @@ int				validations(char **src);
 int				leng_stack(t_stack_list *a);
 int				check_order(t_stack_list *a);
 void			innit_stack(t_stack_list **a, char **src);
-void			sa(t_stack_list *a);
-void			ra(t_stack_list *a);
-void			rra(t_stack_list *a);
+void			s_stack(t_stack_list *stack, char movement[]);
+void			r_stack(t_stack_list *stack, char movement[]);
+void			rr_stack(t_stack_list *stack, char movement[]);
 void			push(t_stack_list **stack, t_stack_list *node);
 void			del(void *stack);
 void			stack_delone(t_stack_list *node, void (*del)(void *));
-void			pb(t_stack_list **a, t_stack_list **b);
+void			p_st(t_stack_list **st1, t_stack_list **st2, char movement[]);
+void			sort_3(t_stack_list *a);
 
 #endif

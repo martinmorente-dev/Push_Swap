@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 13:35:52 by mmorente          #+#    #+#             */
-/*   Updated: 2025/07/31 14:00:55 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/04 13:58:45 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,9 @@ int	main(int argc, char *argv[])
 	l_stack = leng_stack(a);
 	if (check_order(a))
 		return (0);
-	if (l_stack <= 3)
+	else if (l_stack <= 3)
 	{
-		printf("Before \n:");
-		print_stack(a);
-		printf("After: \n");
-		pb(&a, &b);
-		printf("Stakc B\n");
-		print_stack(b);
-		printf("Stakc A\n");
+		sort_3(a);
 		print_stack(a);
 	}
 	else
