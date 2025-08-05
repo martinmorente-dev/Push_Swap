@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utils.c                                      :+:      :+:    :+:   */
+/*   mv_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/31 10:47:08 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/05 11:00:03 by mmorente         ###   ########.fr       */
+/*   Created: 2025/08/05 12:08:04 by mmorente          #+#    #+#             */
+/*   Updated: 2025/08/05 12:09:57 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int	leng_stack(t_stack_list *stack)
+void	push_front(t_stack_list **stack, t_stack_list *node)
 {
-	int	i;
+	node->next = *stack;
+	node->prev = NULL;
 
-	i = 0;
-	while (stack)
-	{
-		stack = stack->next;
-		i++;
-	}
-	return (i);
+	if (*stack)
+		(*stack)->prev = node;
+	*stack = node;
 }
-

@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 13:54:45 by mmorente          #+#    #+#             */
-/*   Updated: 2025/07/31 13:48:39 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/05 12:39:15 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,10 @@ void	innit_stack(t_stack_list **a, char **src)
 	int		j;
 	int		nb;
 	char	**buffer;
+	int		index_global;
 
 	i = 1;
+	index_global = 0;
 	while (src[i])
 	{
 		buffer = ft_split(src[i], ' ');
@@ -71,19 +73,11 @@ void	innit_stack(t_stack_list **a, char **src)
 		while (buffer[j])
 		{
 			nb = ft_atoi(buffer[j]);
-			push(a, new_node(nb, j));
+			push(a, new_node(nb, index_global));
+			index_global++;
 			j++;
 		}
 		i++;
 	}
 }
 
-void	stack_delone(t_stack_list *node, void (*del)(void *))
-{
-	del((void *) node);
-}
-
-void	del(void *stack)
-{
-	free (stack);
-}

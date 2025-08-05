@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 13:35:52 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/04 13:58:45 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/05 11:38:37 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,14 @@ int	main(int argc, char *argv[])
 		return (0);
 	else if (l_stack <= 3)
 	{
-		sort_3(a);
+		sort_3(&a);
 		print_stack(a);
 	}
 	else
-		return (1);
+	{
+		turc_algorithym(&a, &b);
+		print_stack(a);
+	}
 	return (0);
 }
 

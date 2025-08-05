@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utils.c                                      :+:      :+:    :+:   */
+/*   turc_algorithm.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/31 10:47:08 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/05 11:00:03 by mmorente         ###   ########.fr       */
+/*   Created: 2025/08/05 10:14:05 by mmorente          #+#    #+#             */
+/*   Updated: 2025/08/05 11:35:50 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int	leng_stack(t_stack_list *stack)
+// determinate the meridian
+
+// asign the objective node
+
+// determinate the cheapest
+
+// movement calculation
+
+// principal function
+void	turc_algorithym(t_stack_list **a, t_stack_list **b)
 {
-	int	i;
-
-	i = 0;
-	while (stack)
-	{
-		stack = stack->next;
-		i++;
-	}
-	return (i);
+	if (leng_stack(*a) == 4)
+		sort_4(a, b);
 }
-
