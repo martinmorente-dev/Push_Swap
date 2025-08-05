@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algorith_3.c                                       :+:      :+:    :+:   */
+/*   turc_algorithm_utils.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/04 13:25:49 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/05 13:04:46 by mmorente         ###   ########.fr       */
+/*   Created: 2025/08/05 18:11:27 by mmorente          #+#    #+#             */
+/*   Updated: 2025/08/05 19:54:36 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	sort_3(t_stack_list **a)
+void	lowest_to_top(t_stack_list **a, int nb)
 {
-	t_stack_list	*tmp;
+	int	median;
+	int	low_pos;
+	int	len;
 
-	tmp = *a;
-	while (tmp->next != NULL)
+	median = meridian(*a);
+	low_pos = lowest_position(*a, nb);
+	len = leng_stack(*a);
+	while ((*a)->nbr != nb)
 	{
-		if (tmp->nbr > tmp->next->nbr)
-			s_stack(a, "sa\n");
-		tmp = tmp->next;
+		low_pos = lowest_position(*a, nb);
+		if (low_pos <= median)
+			r_stack(a, "ra\n");
+		else
+			rr_stack(a, "rra\n");
 	}
 }
 
+int	meridian(t_stack_list *stack)
+{
+	int	result;
+
+	result = leng_stack(stack) / 2;
+	return (result);
+}
