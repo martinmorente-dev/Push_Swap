@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 13:35:44 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/06 11:30:27 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/06 13:36:02 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct t_stack_list
 }	t_stack_list;
 
 t_stack_list	*new_node(int nbr, int index);
+t_stack_list	*max_node(t_stack_list *stack);
 size_t			lengh_int(int *nbs);
 size_t			count_nb(char **src);
 int				nb_founded(int *src, int nb, size_t i_nbs);
