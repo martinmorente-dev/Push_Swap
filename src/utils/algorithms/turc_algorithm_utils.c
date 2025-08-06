@@ -6,13 +6,28 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 18:11:27 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/05 19:54:36 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/06 11:16:17 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	lowest_to_top(t_stack_list **a, int nb)
+int	lowest_position(t_stack_list *a, int nb)
+{
+	int	pos;
+
+	pos = 0;
+	while (a)
+	{
+		if (a->nbr == nb)
+			return (pos);
+		pos++;
+		a = a->next;
+	}
+	return (pos);
+}
+
+void	move_to_top(t_stack_list **a, int nb)
 {
 	int	median;
 	int	low_pos;

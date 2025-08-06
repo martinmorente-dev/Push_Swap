@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 11:02:15 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/05 18:24:14 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/06 11:16:03 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,4 @@ int	lowest(t_stack_list *a)
 	return (result);
 }
 
-int	lowest_position(t_stack_list *a, int nb)
-{
-	int	pos;
-
-	pos = 0;
-	while (a)
-	{
-		if (a->nbr == nb)
-			return (pos);
-		pos++;
-		a = a->next;
-	}
-	return (pos);
-}
 
