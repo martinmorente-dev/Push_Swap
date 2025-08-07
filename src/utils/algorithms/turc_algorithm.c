@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 10:14:05 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/06 13:49:00 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/07 13:11:55 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@ void	objective_node_a(t_stack_list *a, t_stack_list *b)
 	t_stack_list	*objective;
 	t_stack_list	*tmp_b;
 
-	min_diff = INT_MAX;
-	objective = NULL;
-	tmp_b = b;
 	while (a)
 	{
+		min_diff = INT_MAX;
+		objective = NULL;
+		tmp_b = b;
 		while (tmp_b)
 		{
-			if ((a->nbr > b->nbr) && ((a->nbr - b->nbr) < min_diff))
+			if ((a->nbr < tmp_b->nbr) && ((tmp_b->nbr - a->nbr) < min_diff))
 			{
-				min_diff = a->nbr - b->nbr;
-				objective = b;
+				min_diff = a->nbr - tmp_b->nbr;
+				objective = tmp_b;
 			}
 			tmp_b = tmp_b->next;
 		}
@@ -36,12 +36,22 @@ void	objective_node_a(t_stack_list *a, t_stack_list *b)
 			objective = max_node(b);
 		a->target_node = objective;
 		a = a->next;
-		tmp_b = b;
 	}
 }
 // determinate the cheapest
 
-// movement calculation
+int	move_calc(t_stack_list *st, int nb)
+{
+	int	movements;
+
+	movements = 1;
+	while (st->nbr != nb)
+	{
+		if (st->above_meridian)
+			movements++;
+	}
+	return (movements);
+}
 
 // principal function
 void	turc_algorithm(t_stack_list **a, t_stack_list **b, int leng)
@@ -56,11 +66,11 @@ void	turc_algorithm(t_stack_list **a, t_stack_list **b, int leng)
 		p_st(a, b, "pb\n");
 		while (leng_stack(*a) > 3)
 		{
-			// asign objective node (a to b)
+			objective_node_a(*a, *b);
 			// determinate cheapest
-			// push cheapest
+			// push_cheapest
 		}
-		sort_3(a);
+	/*	sort_3(a);
 		while (leng_stack(*b) > 1)
 		{
 			// asign objective nodes (b to a)
@@ -70,5 +80,6 @@ void	turc_algorithm(t_stack_list **a, t_stack_list **b, int leng)
 		(*b)->cheapest = true;
 		// push cheapest
 		// move lowest to top
+	*/
 	}
 }

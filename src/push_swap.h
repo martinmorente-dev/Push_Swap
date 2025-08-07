@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 13:35:44 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/06 13:36:02 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/07 12:33:54 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int				check_parameter(char **src, int *nbs, size_t *i_nbs);
 int				validations(char **src);
 int				leng_stack(t_stack_list *stack);
 int				check_order(t_stack_list *a);
-int				meridian(t_stack_list *stack);
+int				calc_meridian(t_stack_list *stack);
 int				lowest(t_stack_list *a);
 void			innit_stack(t_stack_list **a, char **src);
 void			s_stack(t_stack_list **stack, char movement[]);
@@ -48,14 +48,13 @@ void			r_stack(t_stack_list **stack, char movement[]);
 void			rr_stack(t_stack_list **stack, char movement[]);
 void			push(t_stack_list **stack, t_stack_list *node);
 void			push_front(t_stack_list **stack, t_stack_list *node);
-void			del(void *stack);
-void			stack_delone(t_stack_list *node, void (*del)(void *));
 void			p_st(t_stack_list **origin, t_stack_list **to_push, char mv[]);
 void			sort_3(t_stack_list **a);
 void			sort_4(t_stack_list **a, t_stack_list **b);
 void			sort_5(t_stack_list **a, t_stack_list **b);
 void			turc_algorithm(t_stack_list **a, t_stack_list **b, int leng);
 void			move_to_top(t_stack_list **a, int nb);
+void			above_or_below_meridian(t_stack_list *stack);
 
 
 
