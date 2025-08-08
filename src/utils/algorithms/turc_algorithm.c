@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 10:14:05 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/07 13:11:55 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/08 13:36:41 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,9 @@ void	objective_node_a(t_stack_list *a, t_stack_list *b)
 }
 // determinate the cheapest
 
-int	move_calc(t_stack_list *st, int nb)
+int	move_calc()
 {
-	int	movements;
 
-	movements = 1;
-	while (st->nbr != nb)
-	{
-		if (st->above_meridian)
-			movements++;
-	}
-	return (movements);
 }
 
 // principal function
