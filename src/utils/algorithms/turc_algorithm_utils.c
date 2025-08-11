@@ -6,68 +6,12 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 18:11:27 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/07 12:33:40 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/11 15:09:22 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int	lowest_position(t_stack_list *a, int nb)
-{
-	int	pos;
-
-	pos = 0;
-	while (a)
-	{
-		if (a->nbr == nb)
-			return (pos);
-		pos++;
-		a = a->next;
-	}
-	return (pos);
-}
-
-void	move_to_top(t_stack_list **a, int nb)
-{
-	int	median;
-	int	low_pos;
-	int	len;
-
-	median = meridian(*a);
-	low_pos = lowest_position(*a, nb);
-	len = leng_stack(*a);
-	while ((*a)->nbr != nb)
-	{
-		low_pos = lowest_position(*a, nb);
-		if (low_pos <= median)
-			r_stack(a, "ra\n");
-		else
-			rr_stack(a, "rra\n");
-	}
-}
-
-int	calc_meridian(t_stack_list *stack)
-{
-	int	result;
-
-	result = leng_stack(stack) / 2;
-	return (result);
-}
-
-t_stack_list	*max_node(t_stack_list *stack)
-{
-	t_stack_list	*node_find;
-
-	node_find = stack;
-	stack = stack->next;
-	while (stack)
-	{
-		if (stack->nbr > node_find->nbr)
-			node_find = stack;
-		stack = stack -> next;
-	}
-	return (node_find);
-}
 
 void	above_or_below_meridian(t_stack_list *stack)
 {
@@ -78,6 +22,53 @@ void	above_or_below_meridian(t_stack_list *stack)
 	{
 		if (stack->index <= meridian)
 			stack->above_meridian = true;
+		else
+			stack->above_meridian = false;
+		stack = stack->next;
+	}
+}
+
+int	ft_abs(int nb)
+{
+	if (nb < 0)
+		nb *= -1;
+	return (nb);
+}
+
+int	max_value(int nb1, int nb2)
+{
+	if (nb1 > nb2)
+		return (nb1);
+	else
+		return (nb2);
+}
+
+int	cheapest_cost(t_stack_list *stack)
+{
+	int	cheapest;
+
+	cheapest = INT_MAX;
+	while (stack)
+	{
+		stack->cheapest = false;
+		if (stack->push_cost < cheapest)
+			cheapest = stack->push_cost;
+		stack = stack->next;
+	}
+	return (cheapest);
+}
+
+void	determinate_cheapest(t_stack_list *stack)
+{
+	int	cheapest;
+
+	cheapest = cheapest_cost(stack);
+	while (stack)
+	{
+		if (stack->push_cost == cheapest)
+			stack->cheapest = true;
+		else
+			stack->cheapest = false;
 		stack = stack->next;
 	}
 }

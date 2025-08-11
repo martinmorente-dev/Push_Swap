@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 13:25:49 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/06 11:19:51 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/11 12:42:15 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,20 @@ int	biggest(t_stack_list *stack)
 		stack = stack->next;
 	}
 	return (num);
+}
+
+int	lowest(t_stack_list *a)
+{
+	int	result;
+
+	result = INT_MAX;
+	while (a)
+	{
+		if (a->nbr < result)
+			result = a->nbr;
+		a = a->next;
+	}
+	return (result);
 }
 
 void	sort_3(t_stack_list **a)

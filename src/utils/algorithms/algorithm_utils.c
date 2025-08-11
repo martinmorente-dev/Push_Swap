@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 11:02:15 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/06 11:16:03 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/11 15:05:38 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,41 @@ int	check_order(t_stack_list *a)
 	return (1);
 }
 
-int	lowest(t_stack_list *a)
+int	calc_meridian(t_stack_list *stack)
 {
 	int	result;
 
-	result = INT_MAX;
-	while (a)
-	{
-		if (a->nbr < result)
-			result = a->nbr;
-		a = a->next;
-	}
+	result = leng_stack(stack) / 2;
 	return (result);
 }
 
 
+t_stack_list	*max_node(t_stack_list *stack)
+{
+	t_stack_list	*node_find;
+
+	node_find = stack;
+	stack = stack->next;
+	while (stack)
+	{
+		if (stack->nbr > node_find->nbr)
+			node_find = stack;
+		stack = stack -> next;
+	}
+	return (node_find);
+}
+
+t_stack_list	*min_node(t_stack_list *stack)
+{
+	t_stack_list	*node_find;
+
+	node_find = stack;
+	stack = stack->next;
+	while (stack)
+	{
+		if (stack->nbr < node_find->nbr)
+			node_find = stack;
+		stack = stack -> next;
+	}
+	return (node_find);
+}

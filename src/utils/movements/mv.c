@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 12:00:53 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/05 19:40:08 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/11 12:21:24 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	s_stack(t_stack_list **stack, char movement[])
 	second->next = first;
 	first->prev = second;
 	*stack = second;
+	recalc_index(*stack);
 	write(1, movement, 3);
 }
 
@@ -48,6 +49,7 @@ void	r_stack(t_stack_list **stack, char movement[])
 	first->next = NULL;
 	first->prev = last;
 	last->next = first;
+	recalc_index(*stack);
 	write(1, movement, 3);
 }
 
@@ -68,7 +70,7 @@ void	rr_stack(t_stack_list **stack, char movement[])
 	last->next = *stack;
 	(*stack)->prev = last;
 	*stack = last;
-
+	recalc_index(*stack);
 	write(1, movement, 4);
 }
 
@@ -86,5 +88,7 @@ void	p_st(t_stack_list **origin, t_stack_list **to_push, char mv[])
 	if (*origin)
 		(*origin)->prev = NULL;
 	push_front(to_push, node);
+	recalc_index(*origin);
+	recalc_index(*to_push);
 	write(1, mv, 3);
 }
