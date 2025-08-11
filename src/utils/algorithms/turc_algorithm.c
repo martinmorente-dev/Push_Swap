@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 10:14:05 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/11 15:10:22 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/11 17:56:11 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,8 @@ void	push_cheapest(t_stack_list **st_origin, t_stack_list **st_dest,
 	}
 	move_to_top(st_dest, cheap_node->target_node->nbr);
 	move_to_top(st_origin, cheap_node->nbr);
+	recalc_index(*st_origin);
+	recalc_index(*st_dest);
 	p_st(st_origin, st_dest, mv);
 }
 
@@ -132,17 +134,18 @@ void	turc_algorithm(t_stack_list **a, t_stack_list **b, int leng)
 		while (leng_stack(*a) > 3)
 		{
 			above_or_below_meridian(*a);
+			above_or_below_meridian(*b);
 			objective_node_a(*a, *b);
 			push_cheapest(a, b, "pb\n");
 		}
 		sort_3(a);
-		while (leng_stack(*b) > 1)
+		while (leng_stack(*b) > 0)
 		{
+			above_or_below_meridian(*a);
 			above_or_below_meridian(*b);
 			objective_node_b(*b, *a);
 			push_cheapest(b, a, "pa\n");
 		}
-		p_st(b, a, "pa\n");
 		move_to_top(a, lowest(*a));
 	}
 }

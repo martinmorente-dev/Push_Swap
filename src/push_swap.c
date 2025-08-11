@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 13:35:52 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/11 14:22:44 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/11 17:56:51 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	print_stack(t_stack_list *a)
 {
 	while (a)
 	{
-		printf("Number: %d with index: %d with objective node: %d\n", a->nbr, a->index, a->target_node->nbr);
+		printf("Number: %d with index: %d, width objective node %d\n", a->nbr, a->index, a->target_node->nbr);
 		a = a->next;
 	}
 }
