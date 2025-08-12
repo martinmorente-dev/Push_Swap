@@ -58,7 +58,7 @@ void	sort_4(t_stack_list **a, t_stack_list **b)
 	int	low;
 
 	low = lowest(*a);
-	move_to_top(a, low);
+	move_to_top(a, low, "a");
 	p_st(a, b, "pb\n");
 	sort_3(a);
 	p_st(b, a, "pa\n");
@@ -70,14 +70,14 @@ void	sort_5(t_stack_list **a, t_stack_list **b)
 	int	big;
 
 	low = lowest(*a);
-	move_to_top(a, low);
+	move_to_top(a, low, "a");
 	p_st(a, b, "pb\n");
 	low = lowest(*a);
-	move_to_top(a, low);
+	move_to_top(a, low, "a");
 	p_st(a, b, "pb\n");
 	sort_3(a);
 	big = biggest(*b);
-	move_to_top(b, big);
+	move_to_top(b, big, "b");
 	p_st(b, a, "pa\n");
 	p_st(b, a, "pa\n");
 }

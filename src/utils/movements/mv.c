@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mv.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmorente <mmorente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 12:00:53 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/11 12:21:24 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/12 17:12:31 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	s_stack(t_stack_list **stack, char movement[])
 	recalc_index(*stack);
 	write(1, movement, 3);
 }
-
 
 void	r_stack(t_stack_list **stack, char movement[])
 {
@@ -54,7 +53,6 @@ void	r_stack(t_stack_list **stack, char movement[])
 }
 
 
-
 void	rr_stack(t_stack_list **stack, char movement[])
 {
 	t_stack_list	*last;
@@ -77,13 +75,9 @@ void	rr_stack(t_stack_list **stack, char movement[])
 
 void	p_st(t_stack_list **origin, t_stack_list **to_push, char mv[])
 {
-	int				tmp;
-	int				tmp_index;
 	t_stack_list	*node;
 
 	node = *origin;
-	tmp = node->nbr;
-	tmp_index = node->index;
 	*origin = node->next;
 	if (*origin)
 		(*origin)->prev = NULL;

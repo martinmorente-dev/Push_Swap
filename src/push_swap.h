@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmorente <mmorente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 13:35:44 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/11 17:30:52 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/12 17:27:17 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,12 @@ void			sort_3(t_stack_list **a);
 void			sort_4(t_stack_list **a, t_stack_list **b);
 void			sort_5(t_stack_list **a, t_stack_list **b);
 void			turc_algorithm(t_stack_list **a, t_stack_list **b, int leng);
-void			move_to_top(t_stack_list **a, int nb);
+void			move_to_top(t_stack_list **a, int nb, char mv[]);
 void			above_or_below_meridian(t_stack_list *stack);
 void			recalc_index(t_stack_list *stack);
 void			determinate_cheapest(t_stack_list *stack);
+
+void			print_stack(t_stack_list *a);
+
 
 #endif

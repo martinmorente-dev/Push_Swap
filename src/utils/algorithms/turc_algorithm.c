@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   turc_algorithm.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmorente <mmorente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 10:14:05 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/11 17:56:11 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/12 17:28:10 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,11 +96,9 @@ void	move_calc(t_stack_list *st_org, t_stack_list *st_dest)
 void	push_cheapest(t_stack_list **st_origin, t_stack_list **st_dest,
 	char mv[])
 {
-	bool			find_cheap;
 	t_stack_list	*tmp;
 	t_stack_list	*cheap_node;
 
-	find_cheap = false;
 	cheap_node = NULL;
 	tmp = *st_origin;
 	move_calc(*st_origin, *st_dest);
@@ -114,8 +112,8 @@ void	push_cheapest(t_stack_list **st_origin, t_stack_list **st_dest,
 		}
 		tmp = tmp->next;
 	}
-	move_to_top(st_dest, cheap_node->target_node->nbr);
-	move_to_top(st_origin, cheap_node->nbr);
+	move_to_top(st_dest, cheap_node->target_node->nbr, "b");
+	move_to_top(st_origin, cheap_node->nbr, "a");
 	recalc_index(*st_origin);
 	recalc_index(*st_dest);
 	p_st(st_origin, st_dest, mv);
@@ -146,6 +144,6 @@ void	turc_algorithm(t_stack_list **a, t_stack_list **b, int leng)
 			objective_node_b(*b, *a);
 			push_cheapest(b, a, "pa\n");
 		}
-		move_to_top(a, lowest(*a));
+		move_to_top(a, lowest(*a), "a");
 	}
 }

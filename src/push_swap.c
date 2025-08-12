@@ -13,12 +13,11 @@
 #include "./push_swap.h"
 #include <stdio.h>
 
-
 void	print_stack(t_stack_list *a)
 {
 	while (a)
 	{
-		printf("Number: %d with index: %d, width objective node %d\n", a->nbr, a->index, a->target_node->nbr);
+		printf("Number: %d with index: %d\n", a->nbr, a->index);
 		a = a->next;
 	}
 }
@@ -54,5 +53,3 @@ int	main(int argc, char *argv[])
 	}
 	return (0);
 }
-
-
