@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   turc_algorithm.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmorente <mmorente@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 10:14:05 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/12 17:28:10 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/13 12:04:30 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,27 +96,16 @@ void	move_calc(t_stack_list *st_org, t_stack_list *st_dest)
 void	push_cheapest(t_stack_list **st_origin, t_stack_list **st_dest,
 	char mv[])
 {
-	t_stack_list	*tmp;
-	t_stack_list	*cheap_node;
+	t_stack_list	*cheapest_node;
+	char			*order;
 
-	cheap_node = NULL;
-	tmp = *st_origin;
 	move_calc(*st_origin, *st_dest);
-	determinate_cheapest(tmp);
-	while (tmp)
-	{
-		if (tmp->cheapest)
-		{
-			cheap_node = tmp;
-			break ;
-		}
-		tmp = tmp->next;
-	}
-	move_to_top(st_dest, cheap_node->target_node->nbr, "b");
-	move_to_top(st_origin, cheap_node->nbr, "a");
+	cheapest_node = return_cheapest_node(*st_origin);
+	order = determin_order(mv);
+	mv_complex(st_origin, st_dest, order, cheapest_node->nbr);
+	p_st(st_origin, st_dest, mv);
 	recalc_index(*st_origin);
 	recalc_index(*st_dest);
-	p_st(st_origin, st_dest, mv);
 }
 
 void	turc_algorithm(t_stack_list **a, t_stack_list **b, int leng)
@@ -144,6 +133,6 @@ void	turc_algorithm(t_stack_list **a, t_stack_list **b, int leng)
 			objective_node_b(*b, *a);
 			push_cheapest(b, a, "pa\n");
 		}
-		move_to_top(a, lowest(*a), "a");
+		move_to_top(a, lowest(*a), 'a');
 	}
 }

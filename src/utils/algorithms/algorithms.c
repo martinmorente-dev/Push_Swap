@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 13:25:49 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/11 12:42:15 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/13 09:48:33 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	sort_4(t_stack_list **a, t_stack_list **b)
 	int	low;
 
 	low = lowest(*a);
-	move_to_top(a, low, "a");
+	move_to_top(a, low, 'a');
 	p_st(a, b, "pb\n");
 	sort_3(a);
 	p_st(b, a, "pa\n");
@@ -70,14 +70,14 @@ void	sort_5(t_stack_list **a, t_stack_list **b)
 	int	big;
 
 	low = lowest(*a);
-	move_to_top(a, low, "a");
+	move_to_top(a, low, 'a');
 	p_st(a, b, "pb\n");
 	low = lowest(*a);
-	move_to_top(a, low, "a");
+	move_to_top(a, low, 'a');
 	p_st(a, b, "pb\n");
 	sort_3(a);
 	big = biggest(*b);
-	move_to_top(b, big, "b");
+	move_to_top(b, big, 'b');
 	p_st(b, a, "pa\n");
 	p_st(b, a, "pa\n");
 }

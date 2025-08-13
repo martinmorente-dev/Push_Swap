@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mv_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmorente <mmorente@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 12:08:04 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/12 17:12:48 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/13 12:54:01 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,37 @@ int	position(t_stack_list *a, int nb)
 }
 
 
-void	move_to_top(t_stack_list **stack, int nb, char mv[])
+void	mv_complex(t_stack_list **st_origin, t_stack_list **st_dest, char mv[],
+	int nb)
+{
+	int	median;
+	int	median_dest;
+	int	nb_obj;
+	int	pos;
+	int	pos_dst;
+
+	nb_obj = nb_objective(*st_origin, nb);
+	while ((*st_origin)->nbr != nb || (*st_dest)->nbr != nb_obj)
+	{
+		median = calc_meridian(*st_origin);
+		median_dest = calc_meridian(*st_dest);
+		pos = position(*st_origin, nb);
+		pos_dst = position(*st_dest, nb_obj);
+		if (pos >= median && pos_dst >= median_dest
+			&& not_top(*st_origin, *st_dest, nb))
+			rr(st_origin, st_dest);
+		else if (pos <= median && pos_dst <= median_dest
+			&& not_top(*st_origin, *st_dest, nb))
+			rrr(st_origin, st_dest);
+		else
+		{
+			move_to_top(st_dest, nb_obj, mv[0]);
+			move_to_top(st_origin, nb, mv[1]);
+		}
+	}
+}
+
+void	move_to_top(t_stack_list **stack, int nb, char mv)
 {
 	int	median;
 	int	pos;
@@ -50,14 +80,14 @@ void	move_to_top(t_stack_list **stack, int nb, char mv[])
 		pos = position(*stack, nb);
 		if (pos <= median)
 		{
-			if (mv[0] == 'a')
+			if (mv == 'a')
 				r_stack(stack, "ra\n");
 			else
 				r_stack(stack, "rb\n");
 		}
 		else
 		{
-			if (mv[0] == 'a')
+			if (mv == 'a')
 				rr_stack(stack, "rra\n");
 			else
 				rr_stack(stack, "rrb\n");

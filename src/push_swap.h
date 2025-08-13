@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmorente <mmorente@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 13:35:44 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/12 17:27:17 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/13 12:28:47 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct t_stack_list
 t_stack_list	*new_node(int nbr, int index);
 t_stack_list	*max_node(t_stack_list *stack);
 t_stack_list	*min_node(t_stack_list *stack);
+t_stack_list	*return_cheapest_node(t_stack_list *stack);
 size_t			count_nb(char **src);
 int				nb_founded(int *src, int nb, size_t i_nbs);
 int				check_parameter(char **src, int *nbs, size_t *i_nbs);
@@ -45,18 +46,25 @@ int				lowest(t_stack_list *a);
 int				ft_abs(int nb);
 int				max_value(int nb1, int nb2);
 int				cheapest_cost(t_stack_list *stack);
+int				not_top(t_stack_list *st_origin, t_stack_list *st_dest, int nb);
+int				nb_objective(t_stack_list *stack, int nb);
+char			*determin_order(char mv[]);
 void			innit_stack(t_stack_list **a, char **src);
 void			s_stack(t_stack_list **stack, char movement[]);
 void			r_stack(t_stack_list **stack, char movement[]);
 void			rr_stack(t_stack_list **stack, char movement[]);
+void			rr(t_stack_list **st_origin, t_stack_list **st_dest);
+void			rrr(t_stack_list **st_origin, t_stack_list **st_dest);
+void			p_st(t_stack_list **origin, t_stack_list **to_push, char mv[]);
 void			push(t_stack_list **stack, t_stack_list *node);
 void			push_front(t_stack_list **stack, t_stack_list *node);
-void			p_st(t_stack_list **origin, t_stack_list **to_push, char mv[]);
+void			mv_complex(t_stack_list **st_origin, t_stack_list **st_dest,
+					char mv[], int nb);
 void			sort_3(t_stack_list **a);
 void			sort_4(t_stack_list **a, t_stack_list **b);
 void			sort_5(t_stack_list **a, t_stack_list **b);
 void			turc_algorithm(t_stack_list **a, t_stack_list **b, int leng);
-void			move_to_top(t_stack_list **a, int nb, char mv[]);
+void			move_to_top(t_stack_list **stack, int nb, char mv);
 void			above_or_below_meridian(t_stack_list *stack);
 void			recalc_index(t_stack_list *stack);
 void			determinate_cheapest(t_stack_list *stack);

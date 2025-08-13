@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mv.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmorente <mmorente@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 12:00:53 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/12 17:12:31 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/13 10:34:30 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ void	r_stack(t_stack_list **stack, char movement[])
 	first->prev = last;
 	last->next = first;
 	recalc_index(*stack);
-	write(1, movement, 3);
+	if (movement)
+		write(1, movement, 3);
 }
 
 
@@ -69,7 +70,8 @@ void	rr_stack(t_stack_list **stack, char movement[])
 	(*stack)->prev = last;
 	*stack = last;
 	recalc_index(*stack);
-	write(1, movement, 4);
+	if (movement)
+		write(1, movement, 4);
 }
 
 
