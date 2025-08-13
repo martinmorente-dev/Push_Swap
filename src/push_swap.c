@@ -42,14 +42,8 @@ int	main(int argc, char *argv[])
 	if (check_order(a))
 		return (0);
 	else if (l_stack <= 3)
-	{
 		sort_3(&a);
-		print_stack(a);
-	}
 	else
-	{
 		turc_algorithm(&a, &b, l_stack);
-		print_stack(a);
-	}
 	return (0);
 }

@@ -54,10 +54,10 @@ void	mv_complex(t_stack_list **st_origin, t_stack_list **st_dest, char mv[],
 		median_dest = calc_meridian(*st_dest);
 		pos = position(*st_origin, nb);
 		pos_dst = position(*st_dest, nb_obj);
-		if (pos >= median && pos_dst >= median_dest
+		if (pos <= median && pos_dst >= median_dest
 			&& not_top(*st_origin, *st_dest, nb))
 			rr(st_origin, st_dest);
-		else if (pos <= median && pos_dst <= median_dest
+		else if (pos >= median && pos_dst <= median_dest
 			&& not_top(*st_origin, *st_dest, nb))
 			rrr(st_origin, st_dest);
 		else

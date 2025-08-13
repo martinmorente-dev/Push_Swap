@@ -112,7 +112,7 @@ void	turc_algorithm(t_stack_list **a, t_stack_list **b, int leng)
 {
 	if (leng == 4)
 		sort_4(a, b);
-	if (leng == 5)
+	else if (leng == 5)
 		sort_5(a, b);
 	else
 	{
