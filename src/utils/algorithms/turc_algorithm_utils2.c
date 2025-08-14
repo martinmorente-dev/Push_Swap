@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 09:12:29 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/13 12:54:48 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/14 15:47:59 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,6 @@ t_stack_list	*return_cheapest_node(t_stack_list *stack)
 	return (cheap_node);
 }
 
-char	*determin_order(char mv[])
-{
-	if (mv[1] == 'b')
-		return ("ba");
-	else
-		return ("ab");
-}
 
 
 int	nb_objective(t_stack_list *stack, int nb)

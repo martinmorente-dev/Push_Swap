@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 12:08:04 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/13 12:54:01 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/14 15:42:40 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,7 @@ int	position(t_stack_list *a, int nb)
 }
 
 
-void	mv_complex(t_stack_list **st_origin, t_stack_list **st_dest, char mv[],
-	int nb)
+void	mv_complex(t_stack_list **st_origin, t_stack_list **st_dest, int nb)
 {
 	int	median;
 	int	median_dest;
@@ -54,16 +53,16 @@ void	mv_complex(t_stack_list **st_origin, t_stack_list **st_dest, char mv[],
 		median_dest = calc_meridian(*st_dest);
 		pos = position(*st_origin, nb);
 		pos_dst = position(*st_dest, nb_obj);
-		if (pos <= median && pos_dst >= median_dest
+		if (pos <= median && pos_dst <= median_dest
 			&& not_top(*st_origin, *st_dest, nb))
 			rr(st_origin, st_dest);
-		else if (pos >= median && pos_dst <= median_dest
+		else if (pos >= median && pos_dst >= median_dest
 			&& not_top(*st_origin, *st_dest, nb))
 			rrr(st_origin, st_dest);
 		else
 		{
-			move_to_top(st_dest, nb_obj, mv[0]);
-			move_to_top(st_origin, nb, mv[1]);
+			move_to_top(st_origin, nb, 'a');
+			move_to_top(st_dest, nb_obj, 'b');
 		}
 	}
 }

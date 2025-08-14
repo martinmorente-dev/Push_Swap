@@ -6,13 +6,13 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 10:14:05 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/13 12:04:30 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/14 16:27:22 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	objective_node_a(t_stack_list *a, t_stack_list *b)
+void	objective_node(t_stack_list *a, t_stack_list *b)
 {
 	int				min_diff;
 	t_stack_list	*objective;
@@ -25,9 +25,9 @@ void	objective_node_a(t_stack_list *a, t_stack_list *b)
 		tmp_b = b;
 		while (tmp_b)
 		{
-			if ((a->nbr < tmp_b->nbr) && ((tmp_b->nbr - a->nbr) < min_diff))
+			if (tmp_b->nbr < a->nbr && (a->nbr - tmp_b->nbr) < min_diff)
 			{
-				min_diff = tmp_b->nbr - a->nbr;
+				min_diff = a->nbr - tmp_b->nbr;
 				objective = tmp_b;
 			}
 			tmp_b = tmp_b->next;
@@ -39,71 +39,47 @@ void	objective_node_a(t_stack_list *a, t_stack_list *b)
 	}
 }
 
-void	objective_node_b(t_stack_list *b, t_stack_list *a)
-{
-	int				min_diff;
-	t_stack_list	*objective;
-	t_stack_list	*tmp_a;
-
-	while (b)
-	{
-		min_diff = INT_MAX;
-		objective = NULL;
-		tmp_a = a;
-		while (tmp_a)
-		{
-			if ((b->nbr < tmp_a->nbr) && ((tmp_a->nbr - b->nbr) < min_diff))
-			{
-				min_diff = tmp_a->nbr - b->nbr ;
-				objective = tmp_a;
-			}
-			tmp_a = tmp_a->next;
-		}
-		if (!objective)
-			objective = min_node(a);
-		b->target_node = objective;
-		b = b->next;
-	}
-}
-
-void	move_calc(t_stack_list *st_org, t_stack_list *st_dest)
+void	move_calc(t_stack_list *st_org, t_stack_list *st_dest,
+	int len_org, int len_dest)
 {
 	int	ra;
 	int	rb;
+	int	median;
+	int	median_dest;
 
+	recalc_index(st_org);
+	recalc_index(st_dest);
+	median = calc_meridian(st_org);
+	median_dest = calc_meridian(st_dest);
 	while (st_org)
 	{
-		if (st_org->above_meridian)
+		if (st_org->index <= median)
 			ra = st_org->index;
 		else
-			ra = st_org->index - leng_stack(st_org);
-		if (st_org->target_node->above_meridian)
+			ra = st_org->index - len_org;
+		if (st_org->target_node->index <= median_dest)
 			rb = st_org->target_node->index;
 		else
-			rb = st_org->target_node->index - leng_stack(st_dest);
-		ra = ft_abs(ra);
-		rb = ft_abs(rb);
-		if ((st_org->above_meridian && st_org->target_node->above_meridian)
-			|| (!st_org->above_meridian
-				&& !st_org->target_node->above_meridian))
-			st_org->push_cost = max_value(ra, rb);
+			rb = st_org->target_node->index - len_dest;
+		if ((ra >= 0 && rb >= 0) || (ra < 0 && rb < 0))
+			st_org->push_cost = max_value(ft_abs(ra), ft_abs(rb));
 		else
-			st_org->push_cost = ra + rb;
+			st_org->push_cost = ft_abs(ra) + ft_abs(rb);
 		st_org = st_org->next;
 	}
 }
 
-void	push_cheapest(t_stack_list **st_origin, t_stack_list **st_dest,
-	char mv[])
+
+
+void	push_cheapest(t_stack_list **st_origin, t_stack_list **st_dest)
 {
 	t_stack_list	*cheapest_node;
-	char			*order;
 
-	move_calc(*st_origin, *st_dest);
+	move_calc(*st_origin, *st_dest, leng_stack(*st_origin),
+		leng_stack(*st_dest));
 	cheapest_node = return_cheapest_node(*st_origin);
-	order = determin_order(mv);
-	mv_complex(st_origin, st_dest, order, cheapest_node->nbr);
-	p_st(st_origin, st_dest, mv);
+	mv_complex(st_origin, st_dest, cheapest_node->nbr);
+	p_st(st_origin, st_dest, "pb\n");
 	recalc_index(*st_origin);
 	recalc_index(*st_dest);
 }
@@ -118,21 +94,15 @@ void	turc_algorithm(t_stack_list **a, t_stack_list **b, int leng)
 	{
 		p_st(a, b, "pb\n");
 		p_st(a, b, "pb\n");
-		while (leng_stack(*a) > 3)
+		while ((leng_stack(*a)))
 		{
 			above_or_below_meridian(*a);
 			above_or_below_meridian(*b);
-			objective_node_a(*a, *b);
-			push_cheapest(a, b, "pb\n");
+			objective_node(*a, *b);
+			push_cheapest(a, b);
 		}
-		sort_3(a);
-		while (leng_stack(*b) > 0)
-		{
-			above_or_below_meridian(*a);
-			above_or_below_meridian(*b);
-			objective_node_b(*b, *a);
-			push_cheapest(b, a, "pa\n");
-		}
-		move_to_top(a, lowest(*a), 'a');
+		move_to_top(b, max_node(*b)->nbr, 'b');
+		while (leng_stack(*b))
+			p_st(b, a, "pa\n");
 	}
 }

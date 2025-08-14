@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 13:35:44 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/13 12:28:47 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/14 14:07:09 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int				max_value(int nb1, int nb2);
 int				cheapest_cost(t_stack_list *stack);
 int				not_top(t_stack_list *st_origin, t_stack_list *st_dest, int nb);
 int				nb_objective(t_stack_list *stack, int nb);
-char			*determin_order(char mv[]);
 void			innit_stack(t_stack_list **a, char **src);
 void			s_stack(t_stack_list **stack, char movement[]);
 void			r_stack(t_stack_list **stack, char movement[]);
@@ -59,7 +58,7 @@ void			p_st(t_stack_list **origin, t_stack_list **to_push, char mv[]);
 void			push(t_stack_list **stack, t_stack_list *node);
 void			push_front(t_stack_list **stack, t_stack_list *node);
 void			mv_complex(t_stack_list **st_origin, t_stack_list **st_dest,
-					char mv[], int nb);
+					int nb);
 void			sort_3(t_stack_list **a);
 void			sort_4(t_stack_list **a, t_stack_list **b);
 void			sort_5(t_stack_list **a, t_stack_list **b);
