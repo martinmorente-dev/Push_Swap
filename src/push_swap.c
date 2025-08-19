@@ -6,21 +6,11 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 13:35:52 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/14 14:58:22 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/15 13:47:26 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
-#include <stdio.h>
-
-void	print_stack(t_stack_list *a)
-{
-	while (a)
-	{
-		printf("Number: %d with index: %d\n", a->nbr, a->index);
-		a = a->next;
-	}
-}
 
 int	main(int argc, char *argv[])
 {

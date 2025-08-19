@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 13:54:45 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/05 12:39:15 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/19 09:34:24 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@ t_stack_list	*new_node(int nbr, int index)
 	t_stack_list	*node;
 
 	node = malloc(sizeof(t_stack_list));
-
 	if (!node)
 		return (NULL);
-
 	node->nbr = nbr;
 	node->index = index;
 	node->push_cost = -1;
@@ -28,7 +26,6 @@ t_stack_list	*new_node(int nbr, int index)
 	node->cheapest = false;
 	node->next = NULL;
 	node->prev = NULL;
-
 	return (node);
 }
 
@@ -38,7 +35,6 @@ void	push(t_stack_list **stack, t_stack_list *node)
 
 	if (!node)
 		return ;
-
 	tmp = 0;
 	node->next = NULL;
 	if (*stack == NULL)
@@ -80,4 +76,3 @@ void	innit_stack(t_stack_list **a, char **src)
 		i++;
 	}
 }
-

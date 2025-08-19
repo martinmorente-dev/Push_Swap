@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 10:14:05 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/14 16:27:22 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/15 13:48:30 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,6 @@ void	move_calc(t_stack_list *st_org, t_stack_list *st_dest,
 		st_org = st_org->next;
 	}
 }
-
-
 
 void	push_cheapest(t_stack_list **st_origin, t_stack_list **st_dest)
 {

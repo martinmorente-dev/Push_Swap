@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 13:35:44 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/14 14:07:09 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/19 09:27:16 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,5 @@ void			move_to_top(t_stack_list **stack, int nb, char mv);
 void			above_or_below_meridian(t_stack_list *stack);
 void			recalc_index(t_stack_list *stack);
 void			determinate_cheapest(t_stack_list *stack);
-
-void			print_stack(t_stack_list *a);
-
 
 #endif

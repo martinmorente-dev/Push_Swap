@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 10:47:08 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/14 15:35:30 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/19 09:34:49 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,3 @@ void	recalc_index(t_stack_list *stack)
 		stack = stack->next;
 	}
 }
-

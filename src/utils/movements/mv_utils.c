@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 12:08:04 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/14 15:42:40 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/19 09:32:24 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	push_front(t_stack_list **stack, t_stack_list *node)
 {
 	node->next = *stack;
 	node->prev = NULL;
-
 	if (*stack)
 		(*stack)->prev = node;
 	*stack = node;
@@ -36,7 +35,6 @@ int	position(t_stack_list *a, int nb)
 	}
 	return (pos);
 }
-
 
 void	mv_complex(t_stack_list **st_origin, t_stack_list **st_dest, int nb)
 {
