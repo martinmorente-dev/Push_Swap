@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 13:54:45 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/19 09:34:24 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/26 12:30:30 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void	innit_stack(t_stack_list **a, char **src)
 			index_global++;
 			j++;
 		}
+		free_double_pt((void **)buffer);
 		i++;
 	}
 }

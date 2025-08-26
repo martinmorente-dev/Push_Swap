@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 13:35:44 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/19 09:27:16 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/26 12:46:58 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_stack_list	*min_node(t_stack_list *stack);
 t_stack_list	*return_cheapest_node(t_stack_list *stack);
 size_t			count_nb(char **src);
 int				nb_founded(int *src, int nb, size_t i_nbs);
-int				check_parameter(char **src, int *nbs, size_t *i_nbs);
+int				check_parameter(char **src, int *nbs, size_t i_nbs);
 int				validations(char **src);
 int				leng_stack(t_stack_list *stack);
 int				check_order(t_stack_list *a);
@@ -67,5 +67,7 @@ void			move_to_top(t_stack_list **stack, int nb, char mv);
 void			above_or_below_meridian(t_stack_list *stack);
 void			recalc_index(t_stack_list *stack);
 void			determinate_cheapest(t_stack_list *stack);
+void			free_double_pt(void **pt);
+void			free_stack(t_stack_list *stack);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 10:47:08 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/19 09:34:49 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/26 12:29:11 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,30 @@ void	recalc_index(t_stack_list *stack)
 		stack->index = i;
 		i++;
 		stack = stack->next;
+	}
+}
+
+void	free_double_pt(void **pt)
+{
+	int	i;
+
+	i = 0;
+	while (pt[i] != NULL)
+	{
+		free(pt[i]);
+		i++;
+	}
+	free(pt);
+}
+
+void	free_stack(t_stack_list *stack)
+{
+	t_stack_list	*tmp;
+
+	while (stack)
+	{
+		tmp = stack;
+		stack = stack->next;
+		free(tmp);
 	}
 }
