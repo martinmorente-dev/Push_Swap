@@ -6,7 +6,7 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 14:07:01 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/26 13:20:34 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/08/29 13:21:49 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,17 @@ int	double_nb_finded(char **src)
 	int			*nbs;
 	char		**buffer;
 	int			argc;
+	size_t		i_nbs;
 
 	nbs = ft_calloc(count_nb(src), sizeof(int *));
 	if (!nbs)
 		return (1);
 	argc = 1;
+	i_nbs = 0;
 	while (src[argc])
 	{
 		buffer = ft_split(src[argc], ' ');
-		if (check_parameter(buffer, nbs, 0))
+		if (check_parameter(buffer, nbs, i_nbs++))
 		{
 			free(nbs);
 			free_double_pt((void *)buffer);
@@ -51,9 +53,9 @@ int	overpass_int(char *src)
 	{
 		nb = ft_atol(nbs[i]);
 		if (nb > INT_MAX)
-			return (1);
+			return (free_double_pt((void **)nbs), 1);
 		else if (nb < INT_MIN)
-			return (1);
+			return (free_double_pt((void **)nbs), 1);
 		i++;
 	}
 	free_double_pt((void **)nbs);
@@ -78,7 +80,6 @@ int	double_symbol_found(char *src)
 	else
 		return (0);
 }
-
 
 int	valid_integer(char *src)
 {

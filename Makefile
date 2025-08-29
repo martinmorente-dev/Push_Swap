@@ -25,9 +25,6 @@ OBJ	= $(SRC:.c=.o)
 INCLUDE_DIR	= src
 INCLUDES	= -I$(INCLUDE_DIR) -I$(LIBFT_DIR)
 
-BONUS_SRC	= $(shell find src -name "*_bonus.c")
-BONUS_OBJ	= $(BONUS_SRC:.c=.o)
-
 all: $(NAME)
 
 $(LIBFT):
@@ -37,10 +34,6 @@ $(LIBFT):
 $(NAME): $(LIBFT) $(OBJ)
 	@echo "Compilando $(NAME)..."
 	$(CC) $(CFLAGS) $(INCLUDES) -o $(NAME) $(OBJ) $(LIBFT)
-
-bonus: $(LIBFT) $(OBJ) $(BONUS_OBJ)
-	@echo "Compilando bonus..."
-	$(CC) $(CFLAGS) $(INCLUDES) -o $(NAME) $(OBJ) $(BONUS_OBJ) $(LIBFT)
 
 %.o: %.c
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
@@ -57,4 +50,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
