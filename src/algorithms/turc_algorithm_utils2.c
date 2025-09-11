@@ -6,11 +6,11 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 09:12:29 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/19 09:29:39 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/09/11 14:50:05 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
 
 t_stack_list	*return_cheapest_node(t_stack_list *stack)
 {

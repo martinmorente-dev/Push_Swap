@@ -6,11 +6,11 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 10:30:34 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/13 10:50:49 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/09/11 14:52:43 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
 
 void	rr(t_stack_list **st_origin, t_stack_list **st_dest)
 {

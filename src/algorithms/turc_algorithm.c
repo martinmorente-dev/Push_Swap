@@ -6,11 +6,11 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 10:14:05 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/15 13:48:30 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/09/11 14:50:38 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
 
 void	objective_node(t_stack_list *a, t_stack_list *b)
 {

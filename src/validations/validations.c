@@ -6,11 +6,11 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 14:07:01 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/29 13:21:49 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/09/11 14:48:50 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
 
 int	double_nb_finded(char **src)
 {

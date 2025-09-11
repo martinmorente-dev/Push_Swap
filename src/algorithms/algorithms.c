@@ -6,11 +6,11 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 13:25:49 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/15 13:53:29 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/09/11 14:49:57 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
 
 int	biggest(t_stack_list *stack)
 {

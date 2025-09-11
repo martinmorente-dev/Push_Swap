@@ -6,11 +6,11 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 18:11:27 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/15 13:49:06 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/09/11 14:50:01 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
 
 void	above_or_below_meridian(t_stack_list *stack)
 {

@@ -6,11 +6,11 @@
 /*   By: mmorente <mmorente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 12:08:04 by mmorente          #+#    #+#             */
-/*   Updated: 2025/08/19 09:32:24 by mmorente         ###   ########.fr       */
+/*   Updated: 2025/09/11 14:49:10 by mmorente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
 
 void	push_front(t_stack_list **stack, t_stack_list *node)
 {
