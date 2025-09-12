@@ -55,7 +55,7 @@ One optimized strategy:
 ## ⚙️ Compilation
 Execute `make`: <br>
 ![Demo video](gifs/make.gif) <br><br>
-to compile the program.
+To compile the program.
 ## ✅ Checker
 Test your solution with the `./checker`:
 ![Demo video2](gifs/checker.gif)<br><br>
@@ -67,4 +67,4 @@ Test your solution with the `./checker`:
 - 📚 Improves understanding of **stacks, linked lists, and arrays**
 - ⚡ Teaches **algorithm efficiency** and optimization
 
-💡 _Pro tip:_ Try generating random inputs with `shuf` for stress testing:
+💡 _Pro tip:_ Try generating random inputs with `shuf` for stress testing!
