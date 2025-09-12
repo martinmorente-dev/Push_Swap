@@ -2,7 +2,7 @@
 ![Representative image algorithm](https://imgs.search.brave.com/pkI6wUFhhwYofXAwwU4AP9NT5IAyYFUQTnHUAjX_ufI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9jb25j/ZXB0by1kZS10ZWNu/b2xvZyVDMyVBRGEt/aW5ub3ZhZG9yYS1j/b24tZXNjcml0dXJh/LW1hbnVhbC1zb2Jy/ZS1lbC10ZWNsYWRv/LXktYWxnb3JpdG1v/LXN1cGVycG9zaWNp/JUMzJUIzbi1kYXRv/cy1wYXJhLWlkZWFz/LWVtcHJlc2FyaWFs/ZXMtMzg2OTAwODc0/LmpwZw)
 
 ## Table of Contents
-- ### [Introduction](#introduction)
+- ###  [Introduction](#introduction)
 - ### [Allowed operations](#allowed-operations)
 - ### [How it works](#how-it-works)
 - ### [Usage example](#usage-example)
@@ -53,8 +53,8 @@ One optimized strategy:
 5. When A is empty, push everything back **B ➝ A = 🎉 Sorted!**
 
 ## ⚙️ Compilation
-First, execute `make`:
-
+Execute `make`: <br>
+![Demo video](gifs/make.gif) <br><br>
 to compile the program.
 ## ✅ Checker
 Test your solution with the checker:
