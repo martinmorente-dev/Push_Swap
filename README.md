@@ -57,8 +57,8 @@ Execute `make`: <br>
 ![Demo video](gifs/make.gif) <br><br>
 to compile the program.
 ## ✅ Checker
-Test your solution with the checker:
-
+Test your solution with the `./checker`:
+![Demo video2](gifs/checker.gif)<br><br>
 - If everything is correct → `OK` ✅
 - If not → `KO` ❌
 
