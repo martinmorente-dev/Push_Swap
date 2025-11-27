@@ -7,7 +7,7 @@
 - ### [How it works](#how-it-works)
 - ### [Usage example](#usage-example)
 - ### [Algorithms and optimization](#algorithms-and-optimization)
-- ###  [Turkish algorithm](#turkish-algorithm)
+- ###  [Turkish algorithym](#turkish-algorithym)
 - ### [Compilation](#compilation)
 - ### [Checker](#checker)
 - ### [Why push swap matters](#why-push-swap-matters)
@@ -44,7 +44,7 @@ To sort efficiently, you'll need to know algorithms and **Big-O complexity:**
 - 📉 O(log n) Logarithmic → e.g., binary search
 - 🌀 O(n²) Quadratic → e.g., bubble sort
 
-## Turkish algorithm
+## Turkish algorithym
 One optimized strategy:
 1. Move elements from A ➝ B while keeping B in **descending order**.
 2. Assign each node in A a **target node** in B.
