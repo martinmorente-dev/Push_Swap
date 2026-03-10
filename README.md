@@ -12,32 +12,32 @@
 - ### [Checker](#checker)
 - ### [Why push swap matters](#why-push-swap-matters)
 
-## 🚀 Introduction
+##  Introduction
 **Push Swap** is a fun yet challenging project where you must **sort integers** using only a small set of stack operations. The twist? You must do it using the **minimum number of moves** possible. 🔥
 
 At the start you get:
 - 📂 Stack A → contains all the numbers (unsorted)
 - 📂 Stack B → starts empty, used only as temporary storage
 
-👉 The program doesn't return the sorted list itself. Instead, it prints the **exact sequence of operations** needed to sort it.
+ The program doesn't return the sorted list itself. Instead, it prints the **exact sequence of operations** needed to sort it.
 
-## 🛠️ Allowed operations
+##  Allowed operations
 - ♻️ sa / sb / ss → swap the first two elements
 - ⏫ pa / pb → push the first element from one stack to the other
 - 🔄 ra / rb / rr → rotate stack upwards (first element goes to last)
 - 🔽 rra / rrb / rrr → reverse rotate stack downwards (last element goes to first)
 
-## 📖 How it works
+##  How it works
 Example flow:
 1. You start with all numbers in **Stack A** and Stack B empty.
 2. Use **push, swap and rotate** to move elements between stacks.
 3. Continue until **Stack A is fully sorted** in ascending order ✅ and Stack B is empty again.
 
-## 🔢 Usage example
+##  Usage example
 
 It will output the sequence of operations.
 
-## 🧩 Algorithms and optimization
+##  Algorithms and optimization
 To sort efficiently, you'll need to know algorithms and **Big-O complexity:**
 - ⚡ O(1) Constant time → instant operations like accessing an array index
 - 📈 O(n) Linear → e.g., scanning through a list
@@ -52,19 +52,19 @@ One optimized strategy:
 4. Push the cheapest element.
 5. When A is empty, push everything back **B ➝ A = 🎉 Sorted!**
 
-## ⚙️ Compilation
+##  Compilation
 Execute `make`: <br>
 ![Demo video](gifs/make.gif) <br><br>
 To compile the program.
-## ✅ Checker
+##  Checker
 Test your solution with the `./checker`:
 ![Demo video2](gifs/checker.gif)<br><br>
-- If everything is correct → `OK` ✅
-- If not → `KO` ❌
+- If everything is correct → `OK` 
+- If not → `KO` 
 
-## 🌟 Why push swap matters
-- 🧠 Boosts **problem-solving skills**
-- 📚 Improves understanding of **stacks, linked lists, and arrays**
-- ⚡ Teaches **algorithm efficiency** and optimization
+##  Why push swap matters
+-  Boosts **problem-solving skills**
+-  Improves understanding of **stacks, linked lists, and arrays**
+-  Teaches **algorithm efficiency** and optimization
 
 💡 _Pro tip:_ Try generating random inputs with `shuf` for stress testing!
